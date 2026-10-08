@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>그림책 즉흥드로잉 키워드</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f7f3ec;color:#332f2a;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}.wrap{width:min(92vw,560px);text-align:center;padding:32px 20px}h1{font-size:clamp(25px,6vw,38px);margin:0 0 10px;letter-spacing:-.04em}.desc{margin:0 0 30px;color:#766f66;line-height:1.6}.cards{display:grid;gap:12px;margin-bottom:24px}.card{background:#fff;border-radius:18px;padding:22px 18px;box-shadow:0 3px 18px rgba(50,45,40,.08)}.label{font-size:12px;color:#9b9186;margin-bottom:7px}.word{font-size:clamp(23px,6vw,32px);font-weight:700;letter-spacing:-.04em}button{border:0;border-radius:999px;padding:15px 30px;font-size:17px;font-weight:700;cursor:pointer;background:#332f2a;color:#fff}button:active{transform:scale(.98)}.tip{margin-top:22px;font-size:13px;color:#9b9186;line-height:1.5}
+</style></head>
+<body><main class="wrap"><h1>그림책 즉흥드로잉</h1><p class="desc">세 가지 키워드를 뽑고, 10분 동안 자유롭게 그려보세요.</p>
+<section class="cards"><div class="card"><div class="label">명사</div><div class="word" id="noun">?</div></div><div class="card"><div class="label">동사</div><div class="word" id="verb">?</div></div><div class="card"><div class="label">형용사 · 상태</div><div class="word" id="adj">?</div></div></section>
+<button onclick="drawWords()">키워드 뽑기</button><div class="tip">같은 조합이 나와도 그림은 달라질 수 있어요.</div></main>
+<script>
+const nouns=["우산","주머니","사다리","물고기","구름","신발","문","나무","그림자","달","풍선","창문","의자","돌멩이","상자","씨앗","기차","고양이","꽃병","모자","연못","편지","시계","빨간 장갑","작은 집","오래된 가방","빈 화분","커다란 나무","비눗방울","종이배"];
+const verbs=["숨다","기다리다","쏟아지다","훔치다","도망가다","두드리다","따라오다","자라다","열리다","사라지다","넘어지다","날아가다","엿보다","기웃거리다","잡아당기다","밀어내다","뒤집히다","헤매다","발견하다","망설이다","기다려 주다","몰래 움직이다","따라가다","놓치다","돌아보다"];
+const adjs=["너무 좁다","거꾸로다","비어 있다","무겁다","외롭다","열리지 않는다","부끄럽다","너무 작다","이상하다","축축하다","반짝인다","조용하다","엉뚱하다","낯설다","아슬아슬하다","늦었다","커다랗다","작고 단단하다","조금 무섭다","쓸쓸하다","엉망이다","아무도 모른다","아직 서툴다","괜히 신난다"];
+function pick(a){return a[Math.floor(Math.random()*a.length)]}function drawWords(){document.getElementById('noun').textContent=pick(nouns);document.getElementById('verb').textContent=pick(verbs);document.getElementById('adj').textContent=pick(adjs)}
+</script></body></html>
